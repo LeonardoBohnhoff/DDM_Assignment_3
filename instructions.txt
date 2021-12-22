@@ -1,0 +1,6 @@
+1. brew install cassandra
+2. brew services start cassandra
+3. cqlsh
+4. create keyspace covid with replication = {'class': 'SimpleStrategy', ‘replication_factor':1};
+5. use covid;
+6. create table covid.gender_evolution_by_country_and_province_and_date (country text, province text, municipality text, day date, month text, new_confirmed_male int, new_confirmed_female int, new_hospitalized_patients_male int, new_hospitalized_patients_female int, primary key((country, province, municipality), day));
